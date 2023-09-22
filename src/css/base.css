@@ -1,0 +1,26 @@
+:root{
+  --bg: rgba(11, 72, 91, 0.7);
+  --fonte:#fff;
+  --estilo-fonte: 'Gruppo', sans-serif;
+}
+body{
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.container{
+  background:  url(/src/img/bg.jpg)no-repeat center / cover;
+  height: 100vh;
+  color: var(--fonte);
+  font-family: var(--estilo-fonte);
+
+}
+
+.container main{
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  padding-top: 3rem;
+
+ 
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/src/img/star-regular.svg" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/784205f3d6.js" crossorigin="anonymous"></script>
+  <title>Hoshi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/css/base.css">
+  <link rel="stylesheet" href="/src/css/cabecalho.css">
+  <link rel="stylesheet" href="/src/css/entrada-info.css">
+  <link rel="stylesheet" href="/src/css/formulario-entrada.css">
+  <link rel="stylesheet" href="/src/css/modal-inscricao.css">
+  <link rel="stylesheet" href="/src/css/rodape.css">
+
+</head>
+<body>
+    <div class="container">
+      <header class="cabecalho">
+        <h1>
+          <i class="fa-regular fa-star" style="color: #3ed4f9;"></i>
+          Hoshi
+        </h1>
+      </header>
+      <main>
+        <div class="entrada__info">
+          <h2>Sejam Bem-Vindos!</h2>
+          <p>Para voçê que gostar de Entretenimento na web e esta cansado de ver status e feeds, e sobre tudo possue gostos ecléticos...</p>
+          <p>Aqui é o lugar certo para voçê, entre e explore esse mundo!</p>
+         </div>
+         <div class="formulario__entrada">
+            <form class="formulario">
+              <label for="email">e-mail</label>
+              <input type="email" name="email" id="email" placeholder="Digite seu email aqui...">
+              <label for="senha">senha</label>
+              <input type="password" name="senha" id="senha" placeholder="Digite sua senha aqui...">
+              <button type="submit" class="formulario__entrada--botao">Entrar</button>
+              <span class="formulario__entrada--inscricao">
+               <p> Ainda não tem cadastro?</p>
+               <a href="http://" target="_blank" rel="noopener noreferrer">Cadastre-se</a>
+              </span>
+            </form>
+         </div>
+      </main>
+      <section class="modal__inscricao">
+        <div class="modal">
+          <div class="formulario__entrada">
+            <form class="formulario">
+              <label for="nome">Nome</label>
+              <input type="email" name="nome" id="nome" placeholder="Digite seu nome aqui...">
+              <label for="email">e-mail</label>
+              <input type="email" name="email" id="email" placeholder="Digite seu email aqui...">
+              <label for="senha">senha</label>
+              <input type="password" name="senha" id="senha" placeholder="Digite sua senha aqui...">
+               <label for="confirmaSenha">Confirmar Senha</label>
+              <input type="password" name="confirmaSenha" id="confirmaSenha" placeholder="Digite sua senha novamente aqui...">
+              <button type="submit" class="formulario__entrada--botao">Cadastrar</button>
+              <span class="formulario__entrada--inscricao">
+               <p> Ainda não tem cadastro?</p>
+               <a href="http://" target="_blank" rel="noopener noreferrer">Cadastre-se</a>
+              </span>
+            </form>
+         </div>
+        </div>
+      </section>
+      <footer class="rodape">
+        <p>&copy;Hoshi - Todos os direitos reservados.</p>
+      </footer>
+    </div>
+</body>
+</html>

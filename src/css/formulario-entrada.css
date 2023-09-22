@@ -1,0 +1,49 @@
+.formulario__entrada{
+ width: 40%;
+ min-height: 400px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+.formulario__entrada .formulario{
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  min-height: 400px;
+  box-shadow: -1px 1px 20px  rgb(245, 245, 219);
+  background: rgba(0,0,0,0.5);
+  border-radius: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+.formulario__entrada .formulario input{
+  padding: 10px;
+  color:  #082158f1;
+  margin: 10px 0;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+.formulario__entrada .formulario input::placeholder{
+  color:  #082158f1;
+}
+.formulario__entrada--botao{
+  padding: 10px;
+  width: 250px;
+  align-self: center;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  background: linear-gradient(to left,#ac4a04f1,#deb04df1,#deb04df1,#ac4a04f1);
+  box-shadow: 2px 2px 4px #082158f1 ;
+  
+}
+.formulario__entrada--inscricao{
+  font-size: 1.3rem;
+}
+.formulario__entrada--inscricao a{
+   color: #f2ea05f1;
+   text-decoration: none;
+}
