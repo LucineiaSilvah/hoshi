@@ -1,0 +1,47 @@
+.filmes{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  font-family: var(--estilo-fonte);
+}
+.filmes__conteudo{
+  display: flex;
+  flex-direction: column;
+
+  margin: auto;
+}
+.card{
+  background: var(--bg);
+  margin: 10px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.card .capa{
+  width: 250px;
+  height: 350px;
+}
+.card .btnAssistir{
+  width: 100%;
+  cursor: pointer;
+  padding: 10px;
+  background: linear-gradient(to left,#ac4a04f1,#deb04df1,#deb04df1,#ac4a04f1);
+  box-shadow: 2px 2px 4px #082158f1 ;
+  border: none;
+}
+.btnAssistir a{
+  color:var(--corFonte);
+  font-size: 1.2rem;
+
+}
+@media screen and (min-width:0) {
+
+}
+@media screen and (min-width:768px) {
+
+}

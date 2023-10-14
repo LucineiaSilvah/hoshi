@@ -1,24 +1,30 @@
-.formulario__entrada{
- width: 40%;
- min-height: 400px;
+.formulario__padrao{
+ flex:1;
  display: flex;
  flex-direction: column;
  align-items: center;
 }
-.formulario__entrada .formulario{
+.formulario__padrao .formulario {
   text-transform: uppercase;
   font-size: 1.5rem;
-  min-height: 400px;
   box-shadow: -1px 1px 20px  rgb(245, 245, 219);
   background: rgba(0,0,0,0.5);
   border-radius: 20px;
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem;
+  padding: 1rem;
 }
-.formulario__entrada .formulario input{
+.formulario__padrao fieldset{
+ border-radius: 20px;
+ font-size: 1.5rem;
+}
+.formulario__padrao legend{
+  text-align: center;
+  color: aquamarine;
+}
+.formulario input{
   padding: 10px;
   color:  #082158f1;
   margin: 10px 0;
@@ -26,10 +32,10 @@
   outline: none;
   border: none;
 }
-.formulario__entrada .formulario input::placeholder{
+.formulario__padrao .formulario input::placeholder{
   color:  #082158f1;
 }
-.formulario__entrada--botao{
+.formulario__padrao--botao{
   padding: 10px;
   width: 250px;
   align-self: center;
@@ -40,10 +46,10 @@
   box-shadow: 2px 2px 4px #082158f1 ;
   
 }
-.formulario__entrada--inscricao{
+.formulario__padrao--inscricao{
   font-size: 1.3rem;
 }
-.formulario__entrada--inscricao a{
+.formulario__padrao--inscricao a{
    color: #f2ea05f1;
    text-decoration: none;
 }

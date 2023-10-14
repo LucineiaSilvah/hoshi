@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap"
+      rel="stylesheet"
+    />
+  <title>Hoshi - Cadastro</title>
+  <link rel="stylesheet" href="/src/css/base.css" />
+  <link rel="stylesheet" href="/src/css/cabecalho.css" />
+  <link rel="stylesheet" href="/src/css/entrada-info.css" />
+  <link rel="stylesheet" href="/src/css/formulario-padrao.css" />
+  <link rel="stylesheet" href="/src/css/inscricao.css" />
+  <link rel="stylesheet" href="/src/css/rodape.css" />
+</head>
+<body id="inscricao">
+  <div class="container">
+    <header class="cabecalho">
+      <h1>
+        <i class="fa-regular fa-star" style="color: #3ed4f9"></i>
+        Hoshi
+      </h1>
+    </header>
+    <main class="inscricao">
+      <div class="formulario__padrao">
+        <form class="formulario">
+         
+          <label for="email">e-mail</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Digite seu email aqui..."
+          />
+          <label for="senha">senha</label>
+          <input
+            type="password"
+            name="senha"
+            id="senha"
+            placeholder="Digite sua senha aqui..."
+          />
+          
+          
+          <button
+            type="submit"
+            class="formulario__padrao--botao"
+            id="cadastrar"
+          >
+            Cadastrar
+          </button>
+          <span class="formulario__padrao--inscricao">
+            <p>Já tem cadastro?</p>
+            <a href="/index.html" target="_blank" rel="noopener noreferrer"
+              >Entrar</a
+            >
+          </span>
+        </form>
+      </div>
+   
+    </main>
+  </div>
+  <footer class="rodape">
+    <p>&copy;Hoshi - Todos os direitos reservados.</p>
+  </footer>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+    } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-analytics.js";
+   
+    const firebaseConfig = {
+      apiKey: "AIzaSyBti_b5reuhrsUXYnruf0ocbXiFAk7QFP8",
+      authDomain: "hoshi-2409.firebaseapp.com",
+      projectId: "hoshi-2409",
+      storageBucket: "hoshi-2409.appspot.com",
+      messagingSenderId: "178639727128",
+      appId: "1:178639727128:web:959230498038a898ecb16d",
+      measurementId: "G-R5K5HB88WG",
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    const botao = document.getElementById("cadastrar");
+
+    botao.addEventListener("click", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("senha").value;
+
+      const auth = getAuth(app);
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          // ...
+          alert("cadastro efetuado com sucesso");
+          location.href = '../../index.html'
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // ..
+          alert("falha ao cadastrar");
+        });
+    });
+
+    //logar
+    const botaoLogar = document.getElementById("botaoLogar");
+    botaoLogar.addEventListener("click", function (e) {
+      e.preventDefault();
+      const email = document.getElementById("emailLogar").value;
+      const password = document.getElementById("senhaLogar").value;
+
+      const auth = getAuth(app);
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          // ...
+          alert('Usuario logado com sucesso')
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert('falha ao Logar, tente novamente em instantes')
+        });
+    });
+  </script>
+</body>
+</html>

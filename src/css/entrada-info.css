@@ -1,6 +1,18 @@
 .entrada__info{
-  width: 30%;
+  flex:2;
+  padding: 0 2rem;
   font-size: 1.5rem;
   text-shadow:-1px 1px 6px rgb(248, 248, 122);
   
 }
+@media screen and (min-width:0) {
+  .entrada__info{
+    width: 95%;
+    text-align: center;
+  }
+ }
+ @media screen and (min-width:768px) {
+  .entrada__info{
+    
+  }
+ }
