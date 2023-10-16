@@ -1,6 +1,7 @@
 #musicas{
  width: 250px;
  align-self: flex-start;
+ height: 100vh;
 }
 #musicas a{
   font-size: 1.5rem;
