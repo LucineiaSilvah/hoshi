@@ -1,5 +1,5 @@
 const dados = [
-  {
+ {
     id: 1,
     titulo: "Duro de Atuar",
     capa: "https://www.themoviedb.org/t/p/w1280/hcuZ68ymJgohTerR8Oo1mb76SJv.jpg",
@@ -57,3 +57,5 @@ dados.forEach((dado) => {
   
   `;
 });
+
+// music

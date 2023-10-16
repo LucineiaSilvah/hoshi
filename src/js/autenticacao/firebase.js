@@ -24,28 +24,28 @@ const analytics = getAnalytics(app);
 
 const botao = document.getElementById("cadastrar");
 
-// botao.addEventListener("click", function (e) {
-//   e.preventDefault();
-//   const email = document.getElementById("email").value;
-//   const password = document.getElementById("senha").value;
+botao.addEventListener("click", function (e) {
+  e.preventDefault();
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("senha").value;
 
-//   const auth = getAuth(app);
-//   createUserWithEmailAndPassword(auth, email, password)
-//     .then((userCredential) => {
-//       // Signed in
-//       const user = userCredential.user;
-//       // ...
-//       alert("cadastro efetuado com sucesso");
-//     })
-//     .catch((error) => {
-//       const errorCode = error.code;
-//       const errorMessage = error.message;
-//       // ..
-//       alert("falha ao cadastrar");
-//     });
-// });
+  const auth = getAuth(app);
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      // ...
+      alert("cadastro efetuado com sucesso");
+      location.href = '../../index.html'
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+      alert("falha ao cadastrar");
+    });
+});
 
-//logar
 const botaoLogar = document.getElementById("botaoLogar");
 botaoLogar.addEventListener("click", function (e) {
   e.preventDefault();
@@ -58,10 +58,7 @@ botaoLogar.addEventListener("click", function (e) {
       // Signed in
       const user = userCredential.user;
       // ...
-      alert('Usuario logado com sucesso,')
-      location.href = './src/pages/home.html'
-      
-
+      alert('Usuario logado com sucesso')
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -69,6 +66,3 @@ botaoLogar.addEventListener("click", function (e) {
       alert('falha ao Logar, tente novamente em instantes')
     });
 });
-
-
-

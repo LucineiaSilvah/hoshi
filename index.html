@@ -111,6 +111,8 @@
       const botao = document.getElementById("cadastrar");
 
       //logar
+    export default  function logar(){
+        
       const botaoLogar = document.getElementById("botaoLogar");
       botaoLogar.addEventListener("click", function (e) {
         e.preventDefault();
@@ -122,10 +124,13 @@
           .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
+            const nik= user.email
+           const nikName=  nik.slice(0,-10)
             // ...
-            alert('Usuario logado com sucesso', user)
-            location.href = './src/pages/home.html'
-            
+        
+            alert(nikName+ '  login efetuado com sucesso!')
+            window.location.href = '/src/pages/home.html'
+            return nikName
 
           })
           .catch((error) => {
@@ -134,7 +139,9 @@
             alert('falha ao Logar, tente novamente em instantes')
           });
       });
-
+      
+      }
+      botaoLogar.onclick = logar()
     
     </script>
   </body>
