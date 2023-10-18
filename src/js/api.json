@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "luh",
+     "email": "luh@luh",
+    "senha":"senha"
+    }
+  ],
+  "filmes": {
+    "name": "typicode"
+  }
+}
