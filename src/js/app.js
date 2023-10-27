@@ -1,6 +1,6 @@
-const videoCardContainer = document.querySelector('.video-container')
+let videoCardContainer = document.querySelector('.video-container')
 
-let api_key = "AIzaSyC3gaIKe29BfTTADwbeyXRXKYl5AYsAeSo";
+let api_key = "AIzaSyD9kAbW0pbDEJ-jRVvbbTIIZArPO1suz0Q";
 let video_http = "https://www.googleapis.com/youtube/v3/videos?";
 let channel_http ="https://www.googleapis.com/youtube/v3/channels?"
 fetch(video_http + new URLSearchParams({
@@ -28,6 +28,9 @@ getChannelIcon = (video_data)=>{
   .then(data=> {
    video_data.channelThumbnail = data.items[0].snippet.thumbnails.default.url;
    makeVideoCard(video_data)
+   
+   
+ 
     })
 }
 
@@ -44,15 +47,28 @@ const makeVideoCard = (data)=>{
         </div>
  
  `
+
+
 }
-//pesquisa
+//pesquisalocation.href = 'https://youtube.com/watch?v=${data.id}'
 
 const inputSearch = document.querySelector('.search-bar')
 const btnSearch = document.querySelector('.search-btn')
 let searchLink = "https://www.youtube.com/results?search_query="
 
-btnSearch.addEventListener('click', ()=>{
+btnSearch.addEventListener('click', (e)=>{
   if(inputSearch.value.length){
     location.href = searchLink + inputSearch.value
   }
+  console.log(searchLink);
 })
+
+
+function mostrarVideoNaTela(data){
+  videoCardContainer.innerHTML=`
+  <iframe width="789" height="444" src="https://www.youtube.com/embed/${data.id}" title="Anitta - Mil Veces (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  
+  `
+  
+}
+

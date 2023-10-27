@@ -12,7 +12,7 @@
       src="https://kit.fontawesome.com/784205f3d6.js"
       crossorigin="anonymous"
     ></script>
-    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+   
     <title>Hoshi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,12 +23,14 @@
     <link rel="stylesheet" href="/src/css/base.css" />
     <link rel="stylesheet" href="/src/css/cabecalho.css" />
     <link rel="stylesheet" href="/src/css/home.css" />
-   
+    <link rel="stylesheet" href="/src/css/home-conteudo.css">
     <link rel="stylesheet" href="/src/css/filmes.css">
+
+    <link rel="stylesheet" href="/src/css/tube.css">
 
     <link rel="stylesheet" href="/src/css/rodape.css" />
   </head>
-  <body >
+  <body id="tube" >
    <div class="container">
     <header class="cabecalho">
       <h1>
@@ -41,8 +43,8 @@
           <a href="/src/pages/home.html">Home</a>
           </li>
           <li>
-            <a  href="/src/pages/tube.html">Tube</a>
-            </li>
+          <a href="#">Conteudo</a>
+          </li>
           <li>
           <a href="#">Sobre</a>
           </li>
@@ -53,32 +55,27 @@
        
         </ul>
        <div class="barra-pesquisa">
-        <input type="search" name="pesquisa" id="pesquisa" placeholder="Digite aqui oque procura"><i class="fa-solid fa-magnifying-glass fa-rotate-90" style="color: #50c0dc;"></i>
+        <input type="search"
+        class="search-bar"
+        name="pesquisa" id="pesquisa" placeholder="Digite aqui oque procura"><i class="fa-solid fa-magnifying-glass fa-rotate-90 search-btn" style="color: #50c0dc;"></i>
        </div>
        <a href="/index.html">
         <i class="fa-solid fa-arrow-right-from-bracket" style="color: #fff;"></i>
        </a>
       </nav>
     </header>
-      <main class="filmes__conteudo">
-        <h2> Seja bem-Vindo(a),</h2>
-        <h2>Filmes Disponiveis</h2>
-      <div class="filmes">
-      
+    <main class="conteudo">
+
+      <div class="video-play">
+       
       </div>
-      </main>
- 
-  <div class="musicas"></div>
- 
-   
-    
+    </main>
     </div>
     <footer class="rodape">
       <p>&copy;Hoshi - Todos os direitos reservados.</p>
     </footer>
         
-      
-     <script src="/src/js/db.js"></script> 
-    
+        
+    <script src="/src/js/app.js"></script>
   </body>
 </html>

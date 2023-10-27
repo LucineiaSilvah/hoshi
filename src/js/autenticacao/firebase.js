@@ -22,30 +22,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
-const botao = document.getElementById("cadastrar");
-
-botao.addEventListener("click", function (e) {
-  e.preventDefault();
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("senha").value;
-
-  const auth = getAuth(app);
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      // ...
-      alert("cadastro efetuado com sucesso");
-      location.href = '../../index.html'
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // ..
-      alert("falha ao cadastrar");
-    });
-});
-
+function logar(){
+  
+}
 const botaoLogar = document.getElementById("botaoLogar");
 botaoLogar.addEventListener("click", function (e) {
   e.preventDefault();
@@ -57,8 +36,14 @@ botaoLogar.addEventListener("click", function (e) {
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
+      const nik= user.email
+      const nikName=  nik.slice(0,-10)
+      
       // ...
       alert('Usuario logado com sucesso')
+    
+      window.location.href = '/src/pages/home.html'
+      return nikName
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -66,3 +51,4 @@ botaoLogar.addEventListener("click", function (e) {
       alert('falha ao Logar, tente novamente em instantes')
     });
 });
+

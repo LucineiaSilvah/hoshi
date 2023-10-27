@@ -1,104 +1,81 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>tube</title>
-  <script
-  src="https://kit.fontawesome.com/784205f3d6.js"
-  crossorigin="anonymous"
-></script>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="/src/css/base.css">
-<link rel="stylesheet" href="/src/css/cabecalho.css">
-<link rel="stylesheet" href="/src/css/home.css">
-  <link rel="stylesheet" href="/src/css/styles.css">
-  <link rel="stylesheet" href="/src/css/rodape.css">
-
-</head>
-<body>
-  <div class="container">
-    
-  <header class="cabecalho" style="width: 100vw;">
-    <h1 style="color: #fff;">
-      <i class="fa-regular fa-star" style="color: #3ed4f9"></i>
-      Hoshi Tube
-    </h1>
-    <nav>
-      <ul>
-        <li>
-        <a href="/src/pages/home.html">Home</a>
-        </li>
-        <li>
-        <a href="#">Conteudo</a>
-        </li>
-        <li>
-        <a href="#">Sobre</a>
-        </li>
-        <li>
-        <a href="#">Contato</a>
-        </li>
-     
-     
-      </ul>
-     <div class="barra-pesquisa">
-      <input type="search" name="pesquisa"
-      class="search-bar"
-      id="pesquisa" placeholder="Digite aqui oque procura"><i class="fa-solid fa-magnifying-glass fa-rotate-90 search-btn" style="color: #50c0dc;"></i>
-     </div>
-     <a href="/index.html">
-      <i class="fa-solid fa-arrow-right-from-bracket " style="color: #fff;"></i>
-     </a>
-    </nav>
-  </header>
-  <!-- <nav class="navbar">
-    <div class="toggle-btn">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <img src="/src/img/star-regular.svg"  class="logo">Hoshi 
-    <div class="search-box">
-      <input type="text" class="search-bar" placeholder="Pequisar">
-      <button class="search-btn">
-        <i class="fa-solid fa-magnifying-glass fa-rotate-90" style="color: #50c0dc;"></i>
-
-      </button>
-    </div>
-    <div class="user-options">
-      <i class="fa-solid fa-video" style="color: #23a49b;"></i>
-      <i class="fa-solid fa-grip-vertical" style="color: #21ab94;"></i>
-      <i class="fa-solid fa-bell" style="color: #27a09e;"></i>
-      <div class="user-dp">
-       <img src="/src/img/perfil.jpg" alt="imagens perfil">
-      </div>
-    </div>
-  </nav> -->
-
-  <!--side bar-->
-  <div class="side-bar">
-   <a href="#" class="links active"><i class="fa-solid fa-house" style="color: #2c1f51;"></i>home</a>
-   <a href="#" class="links"><i class="fa-brands fa-wpexplorer" style="color: #188c5f;"></i>explore </a>
-   <a href="#" class="links"><i class="fa-brands fa-youtube" style="color: #1f5149;"></i>subscription </a>
-   <hr class="separador">
-   <a href="#" class="links"><i class="fa-solid fa-book" style="color: #1f5149;"></i>library </a>
-   <a href="#" class="links"><i class="fa-solid fa-clock-rotate-left" style="color: #1f5147;"></i>history </a>
-   <a href="#" class="links"><i class="fa-solid fa-play" style="color: #1f5151;"></i>your video</a>
-   <a href="#" class="links"><i class="fa-solid fa-clock" style="color: #1f5147;"></i>watch leater </a>
-   <a href="#" class="links"><i class="fa-solid fa-thumbs-up" style="color: #1f5147;"></i>like video</a>
-   <a href="#" class="links"><i class="fa-solid fa-circle-chevron-down" style="color: #1f5137;"></i>show more </a>
-
-  </div>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="/src/img/star-regular.svg"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/784205f3d6.js"
+      crossorigin="anonymous"
+    ></script>
+   
+    <title>Hoshi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/css/base.css" />
+    <link rel="stylesheet" href="/src/css/cabecalho.css" />
+    <link rel="stylesheet" href="/src/css/home.css" />
   
-    <div class="video-container">
-      <!--  -->
+    <link rel="stylesheet" href="/src/css/filmes.css">
+
+    <link rel="stylesheet" href="/src/css/tube.css">
+
+    <link rel="stylesheet" href="/src/css/rodape.css" />
+  </head>
+  <body id="tube" >
+   <div class="container">
+    <header class="cabecalho">
+      <h1>
+        <i class="fa-regular fa-star" style="color: #3ed4f9"></i>
+        Hoshi
+      </h1>
+      <nav>
+        <ul>
+          <li>
+          <a href="/src/pages/home.html">Home</a>
+          </li>
+          <li>
+          <a href="/src/pages/filmes.html">Filmes</a>
+          </li>
+          <li>
+          <a href="#">Sobre</a>
+          </li>
+          <li>
+          <a href="#">Contato</a>
+          </li>
+       
+       
+        </ul>
+       <div class="barra-pesquisa">
+        <input type="search"
+        class="search-bar"
+        name="pesquisa" id="pesquisa" placeholder="Digite aqui oque procura"><i class="fa-solid fa-magnifying-glass fa-rotate-90 search-btn" style="color: #50c0dc;"></i>
+       </div>
+       <a href="/index.html">
+        <i class="fa-solid fa-arrow-right-from-bracket" style="color: #fff;"></i>
+       </a>
+      </nav>
+    </header>
+    <main class="conteudo">
+
+      <div class="video-container">
+       
       </div>
+    </main>
     </div>
     <footer class="rodape">
       <p>&copy;Hoshi - Todos os direitos reservados.</p>
     </footer>
-  </div>
-  <script src="/src/js/app.js">trending</script>
-</body>
+        
+        
+    <script src="/src/js/app.js"></script>
+  </body>
 </html>

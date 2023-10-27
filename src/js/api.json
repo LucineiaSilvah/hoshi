@@ -1,13 +1,14 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "name": "luh",
-     "email": "luh@luh",
-    "senha":"senha"
-    }
-  ],
-  "filmes": {
-    "name": "typicode"
+  "usuarios":[
+  {
+    "nome": "adm",
+    "email":"luh@luh",
+    "senha": "123"
+  },
+  {
+    "nome": "luh",
+    "email":"lll@luh",
+    "senha": "123"
   }
+]
 }

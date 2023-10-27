@@ -43,19 +43,23 @@ const dados = [
 
 const filmes = document.querySelector(".filmes");
 
-dados.forEach((dado) => {
-  filmes.innerHTML += `
-  
-   <div class="card">
-    <h3>${dado.titulo}</h3>
-    <img class="capa" src="${dado.capa}" alt="capa do filme ${dado.titulo}">
-    <button class="btnAssistir">
-    <a href="${dado.url}" target="_blank" rel="noopener noreferrer">Assistir</a>
-    </button>
-   </div>
-  
-  
-  `;
-});
+fetch('https://my-json-server.typicode.com/LucineiaSilvah/apihoshi/filmes')
+.then(res => res.json())
+.then(dados=>{
+    dados.forEach((dado) => {
+    filmes.innerHTML += `
+    
+     <div class="card">
+      <h3>${dado.titulo}</h3>
+      <img class="capa" src="${dado.capa}" alt="capa do filme ${dado.titulo}">
+      <button class="btnAssistir">
+      <a href="${dado.url}" target="_blank" rel="noopener noreferrer">Assistir</a>
+      </button>
+     </div>
+    
+    
+    `;
+  });
+})
 
 // music
