@@ -1,0 +1,59 @@
+#chat .conteudo{
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+#messages {
+  width: 100%;
+  height: calc(100% - 50px);
+backdrop-filter: blur(10px);
+  overflow-y: auto;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  
+}
+#sendMsg {
+  display: flex;
+ width: 100%;
+
+
+}
+#msgText{
+  width: 80%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background: var(--bg);
+  color: #fff;
+  
+}
+#msgBtn{
+width: 20%;
+
+}
+.outer{
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  border-radius: 10px;
+}
+#inner{
+ margin-left: 10px;
+padding: 0.5rem;
+background: var(--bg);
+width:auto;
+color: #fff;
+}
+.me{
+ 
+  text-align: right;
+  border: 3px solid rgb(123, 0, 255);
+  border-radius: 10px;
+}
+.notMe{
+  background: #fff;
+  color: #000;
+ text-align: left;
+ border-radius: 10px;
+ border: 3px solid rgb(0, 255, 200);
+}

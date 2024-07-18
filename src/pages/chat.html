@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="/src/img/star-regular.svg"
+      type="image/x-icon"
+    />
+    <script
+      src="https://kit.fontawesome.com/784205f3d6.js"
+      crossorigin="anonymous"
+    ></script>
+   
+    <title>Hoshi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/css/base.css" />
+    <link rel="stylesheet" href="/src/css/cabecalho.css" />
+    <link rel="stylesheet" href="/src/css/home.css" />
+    <link rel="stylesheet" href="/src/css/home-conteudo.css">
+    <link rel="stylesheet" href="/src/css/filmes.css">
+
+    <link rel="stylesheet" href="/src/css/chat.css">
+
+    <link rel="stylesheet" href="/src/css/rodape.css" />
+  </head>
+  <body id="chat" >
+   <div class="container">
+    <header class="cabecalho">
+      <h1>
+        <i class="fa-regular fa-star" style="color: #3ed4f9"></i>
+        Hoshi
+      </h1>
+      <nav>
+        <ul>
+          <li>
+            <a href="/src/pages/home.html">Home</a>
+            </li>
+          <li>
+          <a  href="/src/pages/tube.html">Tube</a>
+          </li>
+          <li>
+          <a href="#">Sobre</a>
+          </li>
+          <li>
+          <a href="/src/pages/chat.html">Bate- Papo</a>
+          </li>
+          <li>
+          <a href="#">Contato</a>
+          </li>
+       
+       
+        </ul>
+      
+       <a href="/index.html">
+        <i class="fa-solid fa-arrow-right-from-bracket" style="color: #fff;"></i>
+       </a>
+      </nav>
+    </header>
+    <main class="conteudo">
+      <h2>Converças</h2>
+      <div id="messages"></div>
+      <div id="sendMsg">
+        <input type="text" id="msgText" placeholder="digite sua msg.." />
+        <input
+          type="submit"
+          value="enviar"
+          id="msgBtn"
+          onclick="module.sendMsg()"
+        />
+      </div>
+    </main>
+    </div>
+    <footer class="rodape">
+      <p>&copy;Hoshi - Todos os direitos reservados.</p>
+    </footer>
+        
+        
+    <script src="/src/js/app.js"></script>
+    <script>
+      module = {};
+    </script>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+        remove,
+        onChildAdded,
+        onChildRemoved,
+      } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBti_b5reuhrsUXYnruf0ocbXiFAk7QFP8",
+        authDomain: "hoshi-2409.firebaseapp.com",
+        projectId: "hoshi-2409",
+        storageBucket: "hoshi-2409.appspot.com",
+        messagingSenderId: "178639727128",
+        appId: "1:178639727128:web:959230498038a898ecb16d",
+        measurementId: "G-R5K5HB88WG",
+      };
+      const app = initializeApp(firebaseConfig);
+
+      const db = getDatabase(app);
+      //var mensagem do input
+      var msgText = document.getElementById("msgText");
+      var timestamp = new Date().getTime();
+      var sender;
+      if (sessionStorage.getItem("sender")) {
+        sender = sessionStorage.getItem("sender");
+      } else {
+        sender = prompt("digite seu nome");
+        sessionStorage.setItem("sender", sender);
+      }
+      // enviar msg
+      module.sendMsg = function sendMsg() {
+        var msg = msgText.value;
+        set(ref(db, "messages/" + timestamp), {
+          msg: msg,
+          sender: sender,
+        });
+        msgText.value = ''
+      };
+
+      onChildAdded(ref(db, "messages"), (data) => {
+      if (data.val().sender == sender){
+        messages.innerHTML += "<div style=justify-content:end class=outer id="+data.key+"><div id=inner class=me>voce: "+data.val().msg+"<button id=dlMsg onclick=module.dlMsg("+data.key+")>Delete</button></div></div>"
+      }else{
+        messages.innerHTML += "<div class=outer id="+data.key+"><div id=inner class=notMe>"+data.val().sender+" : "+data.val().msg+"</div></div>"
+
+      }
+      });
+
+
+      //delete
+      module.dlMsg = function dlMsg(key){
+        remove(ref(db,"messages/"+key))
+      }
+
+      onChildRemoved(ref(db,"messages"),(data)=>{
+        var msgBox = document.getElementById(data.key);
+        messages.removeChild(msgBox);
+      })
+    </script>
+  </body>
+</html>
